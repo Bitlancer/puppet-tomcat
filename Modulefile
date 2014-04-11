@@ -1,0 +1,10 @@
+name 'tomcat'
+version '0.0.1'
+source 'https://github.com/Bitlancer/puppet-tomcat.git'
+author 'Bitlancer LLC'
+license 'Apache 2.0'
+summary 'Bitlancer Tomcat Module'
+description 'Manage a Tomcat service'
+project_page 'https://github.com/Bitlancer/puppet-tomcat.git'
+
+dependency 'puppetlabs/java', '>= 0.2.0'
