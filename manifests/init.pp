@@ -2,7 +2,8 @@ class tomcat (
   $version = 'present',
   $package = $tomcat::params::tomcat_package,
   $java_home = $tomcat::params::java_home,
-  $catelina_home = $tomcat::params::catelina_home,
+  $catelina_home = $tomcat::params::user_homedir,
+  $context_dir = $tomcat::params::context_dir,
   $runas = $tomcat::params::user,
   $waitfor = 30,
   $security = 'on',
@@ -16,6 +17,9 @@ class tomcat (
     name   => $package,
     before => Service['tomcat'],
   } -> 
+  exec { "/bin/mkdir -p $context_dir":
+    unless => "/usr/bin/test -d $context_dir",
+  } ->
   file { 'config-file':
     ensure => 'present',
     purge => true,

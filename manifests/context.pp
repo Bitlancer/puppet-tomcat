@@ -5,12 +5,8 @@ define tomcat::context(
   $httponly = "true"
 ) {
 
-  file { "context_dir":
-    ensure => present,
-    path = $tomcat::params::context_dir
-  } ->
-  file { "$name.xml":
-    path = "$context_dir/$name",
+  file { "$name":
+    path => "$tomcat::context_dir/$name.xml",
     content => template('tomcat/context.erb'),
     require => Package['tomcat'],
     notify => Service['tomcat']

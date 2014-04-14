@@ -9,8 +9,7 @@ class tomcat::params {
       $tomcat_package  = 'tomcat6'
       $config_path     = '/etc/sysconfig/tomcat6'
       $user_homedir    = '/usr/share/tomcat6'
-      $catelina_home   = '/etc/tomcat6'
-      $context_dir     = '/etc/tomcat6/Catelina/localhost'
+      $context_dir     = '/etc/tomcat6/Catalina/localhost'
       $java_home       = '/usr/java/default'
     }
     'Debian': {
@@ -20,8 +19,7 @@ class tomcat::params {
       $tomcat_package  = 'tomcat6'
       $config_path     = '/etc/default/tomcat6'
       $user_homedir    = '/usr/share/tomcat6'
-      $catelina_home   = '/etc/tomcat6'
-      $context_dir     = '/etc/tomcat6/Catelina/localhost'
+      $context_dir     = '/etc/tomcat6/Catalina/localhost'
       $java_home       = '/usr/lib/jvm'
     }
   }
