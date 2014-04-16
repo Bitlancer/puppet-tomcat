@@ -17,9 +17,6 @@ class tomcat (
     name   => $package,
     before => Service['tomcat'],
   } -> 
-  exec { "/bin/mkdir -p $context_dir":
-    unless => "/usr/bin/test -d $context_dir",
-  } ->
   file { 'config-file':
     ensure => 'present',
     purge => true,
