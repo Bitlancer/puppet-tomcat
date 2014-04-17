@@ -1,4 +1,4 @@
-name 'tomcat'
+name 'bitlancer-tomcat'
 version '0.0.1'
 source 'https://github.com/Bitlancer/puppet-tomcat.git'
 author 'Bitlancer LLC'
