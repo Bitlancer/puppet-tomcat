@@ -2,7 +2,9 @@ define tomcat::context(
   $path = "/",
   $docbase = undef,
   $debug = "0",
-  $httponly = "true"
+  $httponly = "true",
+  $resources = [],
+  $manager = {}
 ) {
   
   exec { "mkdir -p $context_dir":
