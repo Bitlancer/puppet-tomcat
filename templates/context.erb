@@ -1,7 +1,9 @@
 <Context path="<%= @path %>" docBase="<%= @docbase %>" debug="<%= @debug %>" useHttpOnly="<%= @httponly %>">
-  <% resources.each do |resource| %>
-  <Resource name="<% resource[name] %>" type="<% resource[type] %>"
-    description="<% resource[description] %>" auth="<% resource[auth] %>" 
-    factory="<% resource[factory] %>" jotm.timeout="<% resource[jotm.timeout] %>" />
-  <% end %>
+<% @resources.each do |resource| -%>
+  <Resource
+  <% resource.each_pair do |key, val| -%>
+    <%= "#{key}=\"#{val}\"" %>
+  <% end -%>
+  />
+<% end -%>
 </Context>
