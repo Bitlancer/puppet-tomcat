@@ -2,7 +2,7 @@ class tomcat (
   $version = 'present',
   $package = $tomcat::params::tomcat_package,
   $java_home = $tomcat::params::java_home,
-  $catelina_home = $tomcat::params::user_homedir,
+  $catalina_home = $tomcat::params::user_homedir,
   $context_dir = $tomcat::params::context_dir,
   $runas = $tomcat::params::user,
   $waitfor = 30,
