@@ -6,9 +6,9 @@ define tomcat::context(
   $resources = [],
   $manager = {}
 ) {
-  
-  exec { "mkdir -p $context_dir":
-    unless => "test -d $context_dir",
+
+  exec { "mkdir -p $tomcat::context_dir":
+    unless => "test -d $tomcat::context_dir",
     path => ["/bin", "/usr/bin", "/usr/sbin", "/usr/local/bin"]
   } ->
   file { "$name":
