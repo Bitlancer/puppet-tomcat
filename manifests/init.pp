@@ -28,4 +28,7 @@ class tomcat (
     enable => true,
     name   => $tomcat::params::service,
   }
+  
+  Class['java'] -> Class['tomcat']
+  
 }
