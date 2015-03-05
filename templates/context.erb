@@ -1,7 +1,7 @@
 <Context path="<%= @path %>" docBase="<%= @docbase %>" debug="<%= @debug %>" useHttpOnly="<%= @httponly %>">
 <% @resources.each do |resource| -%>
   <Resource
-  <% resource.each_pair do |key, val| -%>
+  <% resource.sort.map do |key, val| -%>
     <%= "#{key}=\"#{val}\"" %>
   <% end -%>
   />
